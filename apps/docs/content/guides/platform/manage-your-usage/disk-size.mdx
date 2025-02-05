@@ -4,7 +4,7 @@ title: 'Manage Disk size usage'
 ---
 
 ## What you are charged for
-Each Supabase project has a dedicated [disk](/docs/guides/platform/compute-and-disk#disk). You are charged for the provisioned disk size.
+Each database has a dedicated [disk](/docs/guides/platform/compute-and-disk#disk). You are charged for the provisioned disk size.
 
 <Admonition type="note">
   Disk size is not relevant for the Free Plan. Instead Free Plan customers are limited by [Database size](/docs/guides/platform/database-size).
@@ -22,14 +22,17 @@ Pricing depends on the [disk type](/docs/guides/platform/compute-and-disk#disk-t
 
 ### General purpose disks (gp3)
 
-1 GB-Hrs is $0.000171 ($0.125 per GB per month).
-Each project gets provisioned with an 8 GB disk for free. You are only charged for the disk size exceeding these 8 GB.
+1 GB-Hrs is $0.000171 ($0.125 per GB per month). The primary database of your project gets provisioned with an 8 GB disk. You are only charged for provisioned disk size exceeding these 8 GB.
 
 | Plan       | Included Disk Size | Over-Usage per GB per month | Over-Usage per GB-Hrs |
 |------------|--------------------|-----------------------------|-----------------------|
 | Pro        | 8 GB               | $0.125                      | $0.000171             |
 | Team       | 8 GB               | $0.125                      | $0.000171             |
 | Enterprise | Custom             | Custom                      | Custom                |
+
+<Admonition type="note">
+  Launching a Read Replica creates an additional database with its own dedicated disk. You are charged from the first byte of provisioned disk for the Read Replica. Refer to [Manage Read Replica usage](/docs/guides/platform/manage-your-usage/read-replicas) for details on billing.
+</Admonition>
 
 ### High performance disks (io2)
 1 GB-Hrs is $0.000267 ($0.195 per GB per month).
